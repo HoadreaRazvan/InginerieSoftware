@@ -14,6 +14,6 @@
 <h1><%= "Hoadrea Razvan" %>
 </h1>
 <br/>
-<a href="hello-servlet">Test</a>
+<a href="about.jsp">About</a>
 </body>
 </html>
