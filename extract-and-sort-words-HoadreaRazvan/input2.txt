@@ -1,0 +1,3 @@
+fisier care contine mai multe cuvinte
+separate, fie prin spatiu, fie prin semne de punctuatie.
+Fisierul contine si cuvinte cu litera mare.

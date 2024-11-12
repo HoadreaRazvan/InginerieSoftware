@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <excludeFromCompile>
+      <directory url="file://$PROJECT_DIR$/archetypes/jaxrs-service-archetype/src/main/resources/archetype-resources" includeSubdirectories="true" />
+    </excludeFromCompile>
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="unsubscriber" />
+        <module name="checkout-module" />
+        <module name="roster-common" />
+        <module name="websocketbot" />
+        <module name="traffic-eis" />
+        <module name="reservation" />
+        <module name="clientmdbentity-appclient" />
+        <module name="events" />
+        <module name="order" />
+        <module name="asynchconsumer" />
+        <module name="trading-war" />
+        <module name="dukeetf2" />
+        <module name="async-smtpd" />
+        <module name="standalone" />
+        <module name="encoder" />
+        <module name="async-war" />
+        <module name="cart-secure-common" />
+        <module name="decorators" />
+        <module name="hello" />
+        <module name="traffic-rar" />
+        <module name="dukes-payment" />
+        <module name="cart-common" />
+        <module name="roster-appclient" />
+        <module name="simplemessage-ear" />
+        <module name="interceptor" />
+        <module name="fileupload" />
+        <module name="vendor" />
+        <module name="synchconsumer" />
+        <module name="websimplemessage" />
+        <module name="cart-ejb" />
+        <module name="retailer" />
+        <module name="simplemessage-appclient" />
+        <module name="phonebilling" />
+        <module name="jobs" />
+        <module name="dukes-bookstore" />
+        <module name="converter-secure" />
+        <module name="trading-rar" />
+        <module name="webserverlog" />
+        <module name="simplemessage-ejb" />
+        <module name="traffic-war" />
+        <module name="entities" />
+        <module name="cart-ear" />
+        <module name="compositecomponentexample" />
+        <module name="clientackconsumer" />
+        <module name="roster-ear" />
+        <module name="jaxrs-service-archetype" />
+        <module name="converter" />
+        <module name="clientsessionmdb-ejb" />
+        <module name="rsvp" />
+        <module name="bookmarks" />
+        <module name="clientsessionmdb-ear" />
+        <module name="jsonpstreaming" />
+        <module name="timersession" />
+        <module name="taskcreator" />
+        <module name="messagebrowser" />
+        <module name="dukes-resources" />
+        <module name="simplegreeting" />
+        <module name="dukes-shipment" />
+        <module name="ajaxguessnumber" />
+        <module name="dukeetf" />
+        <module name="jsonpmodel" />
+        <module name="cart-secure-ear" />
+        <module name="shareddurableconsumer" />
+        <module name="clientsessionmdb-appclient" />
+        <module name="cart-secure-ejb" />
+        <module name="trading-ear" />
+        <module name="producer" />
+        <module name="durableconsumer" />
+        <module name="billpayment" />
+        <module name="sharedconsumer" />
+        <module name="trading-eis" />
+        <module name="guessnumber-jsf" />
+        <module name="clientmdbentity-ejb" />
+        <module name="mood" />
+        <module name="simple-flow" />
+        <module name="custom-identity-store" />
+        <module name="built-in-db-identity-store" />
+        <module name="guessnumber-cdi" />
+        <module name="genericsupplier" />
+        <module name="address-book" />
+        <module name="clientmdbentity-ear" />
+        <module name="traffic-ejb" />
+        <module name="dukes-store" />
+        <module name="cart-secure-appclient" />
+        <module name="traffic-ear" />
+        <module name="counter" />
+        <module name="producerfields" />
+        <module name="cart-appclient" />
+        <module name="dukes-tutoring-war" />
+        <module name="jsonbbasics" />
+        <module name="producermethods" />
+        <module name="customer" />
+      </profile>
+      <profile name="Annotation profile for Jakarta EE Tutorial Examples" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$MAVEN_REPOSITORY$/org/eclipse/persistence/org.eclipse.persistence.jpa.modelgen.processor/3.0.0/org.eclipse.persistence.jpa.modelgen.processor-3.0.0.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/eclipse/persistence/org.eclipse.persistence.jpa/3.0.0/org.eclipse.persistence.jpa-3.0.0.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/eclipse/persistence/org.eclipse.persistence.asm/3.0.0/org.eclipse.persistence.asm-3.0.0.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/eclipse/persistence/org.eclipse.persistence.core/3.0.0/org.eclipse.persistence.core-3.0.0.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/eclipse/persistence/org.eclipse.persistence.jpa.jpql/3.0.0/org.eclipse.persistence.jpa.jpql-3.0.0.jar" />
+          <entry name="$MAVEN_REPOSITORY$/jakarta/persistence/jakarta.persistence-api/3.0.0/jakarta.persistence-api-3.0.0.jar" />
+          <entry name="$MAVEN_REPOSITORY$/jakarta/annotation/jakarta.annotation-api/2.0.0/jakarta.annotation-api-2.0.0.jar" />
+          <entry name="$MAVEN_REPOSITORY$/junit/junit/4.13.1/junit-4.13.1.jar" />
+          <entry name="$MAVEN_REPOSITORY$/org/hamcrest/hamcrest-core/1.3/hamcrest-core-1.3.jar" />
+        </processorPath>
+        <module name="dukes-tutoring-common" />
+        <module name="roster-ejb" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="hello-appclient" target="1.8" />
+      <module name="hello-webclient" target="1.8" />
+      <module name="hello1" target="1.8" />
+      <module name="hello1-formauth" target="1.8" />
+      <module name="hello1-rlc" target="1.8" />
+      <module name="hello2" target="1.8" />
+      <module name="hello2-basicauth" target="1.8" />
+      <module name="helloservice" target="1.8" />
+      <module name="helloservice-war" target="1.8" />
+      <module name="parent (14) (jakarta.tutorial.jaxws)" target="1.8" />
+      <module name="parent (15) (jakarta.tutorial.jms.clientmdbentity)" target="1.8" />
+      <module name="parent (16) (jakarta.tutorial.jms.clientsessionmdb)" target="1.8" />
+      <module name="parent (17) (jakarta.tutorial.jms.durablesubscriptionexample)" target="1.8" />
+      <module name="parent (18) (jakarta.tutorial.jms)" target="1.8" />
+      <module name="parent (19) (jakarta.tutorial.jms.shared)" target="1.8" />
+      <module name="parent (20) (jakarta.tutorial.jms.simple)" target="1.8" />
+      <module name="parent (21) (jakarta.tutorial.jms.simplemessage)" target="1.8" />
+      <module name="parent (22) (jakarta.tutorial.jms.transactedexample)" target="1.8" />
+      <module name="parent (23) (jakarta.tutorial.persistence)" target="1.8" />
+      <module name="parent (24) (jakarta.tutorial.persistence.roster)" target="1.8" />
+      <module name="parent (25) (jakarta.tutorial.security.cart-secure)" target="1.8" />
+      <module name="parent (26) (jakarta.tutorial.security)" target="1.8" />
+      <module name="parent (27) (jakarta.tutorial.security.security-api)" target="1.8" />
+      <module name="parent (28) (jakarta.tutorial.web.jsf)" target="1.8" />
+      <module name="parent (29) (jakarta.tutorial.web.jsonb)" target="1.8" />
+      <module name="parent (30) (jakarta.tutorial.web.jsonp)" target="1.8" />
+      <module name="parent (31) (jakarta.tutorial.web)" target="1.8" />
+      <module name="parent (32) (jakarta.tutorial.web.servlet)" target="1.8" />
+      <module name="parent (33) (jakarta.tutorial.web.websocket)" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+</project>
