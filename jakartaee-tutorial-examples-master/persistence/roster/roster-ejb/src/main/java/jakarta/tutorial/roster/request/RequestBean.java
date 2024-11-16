@@ -60,37 +60,46 @@ public class RequestBean implements Request, Serializable {
 
 
 
-
-
     @Override
-    public void addMatch(String team1, String team2, Boolean team1Win, Boolean team2Win, Boolean tie) {
-        logger.info("addMatch");
+    public void allPosibleMatches(String leagueId) {
+        logger.info("allPosibleMatches");
         try {
-            Team t1 = em.find(Team.class, team1);
-            Team t2 = em.find(Team.class, team2);
-            if (team1Win) {
-                t1.setPoints(t1.getPoints() + 3);
-            } else if (team2Win) {
-                t2.setPoints(t2.getPoints() + 3);
-            } else if (tie) {
-                t1.setPoints(t1.getPoints() + 1);
-                t2.setPoints(t2.getPoints() + 1);
+            League league = em.find(League.class, leagueId);
+            Collection<Team> teams = league.getTeams();
+            List<Team> teamList = new ArrayList<>(teams);
+
+            for (int i = 0; i < teamList.size() - 1; i++) {
+                for (int j = i + 1; j < teamList.size(); j++) {
+                    Team team1 = teamList.get(i);
+                    Team team2 = teamList.get(j);
+                    int team1Points = new Random().nextInt(7);
+                    int team2Points = new Random().nextInt(7);
+                    if (team1Points > team2Points) {
+                        team1.setPoints(team1.getPoints() + 3);
+                    } else if (team1Points < team2Points) {
+                        team2.setPoints(team2.getPoints() + 3);
+                    } else {
+                        team1.setPoints(team1.getPoints() + 1);
+                        team2.setPoints(team2.getPoints() + 1);
+                    }
+                    team1.addMatch(team2.getId() + " " + team1Points + " " + team2Points);
+                    team2.addMatch(team1.getId() + " " + team2Points + " " + team1Points);
+                }
             }
-            t1.addMatch(t2);
-            t2.addMatch(t1);
         } catch (Exception ex) {
             throw new EJBException(ex);
         }
     }
 
+
     @Override
-    public List<TeamDetails> getLeagueStandings(String leagueId) {
-        logger.info("getLeagueStandings");
+    public List<TeamDetails> getAllTopTeamsByLeague(String leagueId) {
+        logger.info("getAllTopTeamsByLeague");
         List<TeamDetails> detailsList = new ArrayList<>();
         Collection<Team> teams = null;
-
+        League league = null;
         try {
-            League league = em.find(League.class, leagueId);
+            league = em.find(League.class, leagueId);
             teams = league.getTeams();
         } catch (Exception ex) {
             throw new EJBException(ex);
@@ -99,47 +108,37 @@ public class RequestBean implements Request, Serializable {
         Iterator<Team> i = teams.iterator();
         while (i.hasNext()) {
             Team team = (Team) i.next();
-            TeamDetails teamDetails = new TeamDetails(team.getId(),
-                    team.getMatches().size(),
+            TeamDetails teamDetails = new TeamDetails(team.getName(),
+                    league.getTeams().size()-1,
                     team.getPoints());
             detailsList.add(teamDetails);
         }
-        Collections.sort(detailsList, new Comparator<TeamDetails>() {
-            @Override
-            public int compare(TeamDetails td1, TeamDetails td2) {
-                return td2.getPoints() - td1.getPoints();
-            }
-        });
+        detailsList.sort( (t1, t2) -> t2.getPoints() - t1.getPoints());
         return detailsList;
     }
 
     @Override
-    public List<TeamDetails> getTeamMatches(String teamId) {
-        logger.info("getTeamMatches");
+    public List<TeamDetails> getAllMatchesByTeam(String teamId) {
+        logger.info("getAllMatchesByTeam");
         List<TeamDetails> detailsList = new ArrayList<>();
-        Collection<Team> matches = null;
-
+        Team team = null;
         try {
-            Team team = em.find(Team.class, teamId);
-            matches = team.getMatches();
+            team = em.find(Team.class, teamId);
         } catch (Exception ex) {
             throw new EJBException(ex);
         }
 
-        Iterator<Team> i = matches.iterator();
-        while (i.hasNext()) {
-            Team match = (Team) i.next();
-            TeamDetails teamDetails = new TeamDetails(match.getId(),
-                    match.getName(),
-                    match.getCity(),
-                    match.getPoints());
+        String[] matches = team.getMatchesPlayed().split(":");
+        for (String match : matches) {
+            String[] matchDetails = match.split(" ");
+            TeamDetails teamDetails = new TeamDetails(team.getId(),
+                    matchDetails[0],
+                    Integer.parseInt(matchDetails[1]),
+                    Integer.parseInt(matchDetails[2]));
             detailsList.add(teamDetails);
         }
         return detailsList;
     }
-
-
-
 
 
     @Override

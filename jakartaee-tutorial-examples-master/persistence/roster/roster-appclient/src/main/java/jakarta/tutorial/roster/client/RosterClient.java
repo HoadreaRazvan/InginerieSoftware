@@ -192,16 +192,7 @@ public class RosterClient {
             request.addPlayer("P7", "T5");
 
             // Matches
-
-            request.addMatch("T1", "T2", true, false, false);
-            request.addMatch("T1", "T5", false, false, true);
-
-            request.addMatch("T3", "T4", true, false, false);
-
-            request.addMatch("T6", "T7", false, true, false);
-            request.addMatch("T7", "T8", false, false, true);
-
-            request.addMatch("T9", "T10", true, false, false);
+            request.allPosibleMatches("L1");
 
 
         } catch (Exception ex) {
@@ -255,86 +246,6 @@ public class RosterClient {
             List<TeamDetails> teamList;
             List<LeagueDetails> leagueList;
             List<String> sportList;
-
-
-            System.out.println("\n\nHOADREA RAZVAN\n\n");
-
-
-            System.out.println("Standings of league L1:");
-            teamList = request.getLeagueStandings("L1");
-            printDetailsList(teamList);
-            System.out.println();
-
-            System.out.println("Standings of league L2:");
-            teamList = request.getLeagueStandings("L2");
-            printDetailsList(teamList);
-            System.out.println();
-
-            System.out.println("Standings of league L3:");
-            teamList = request.getLeagueStandings("L3");
-            printDetailsList(teamList);
-            System.out.println();
-
-            System.out.println("Standings of league L4:");
-            teamList = request.getLeagueStandings("L4");
-            printDetailsList(teamList);
-            System.out.println();
-
-
-            System.out.println("Matches of team T1:");
-            teamList = request.getTeamMatches("T1");
-            printDetailsList(teamList);
-            System.out.println();
-
-            System.out.println("Matches of team T2:");
-            teamList = request.getTeamMatches("T2");
-            printDetailsList(teamList);
-            System.out.println();
-
-            System.out.println("Matches of team T3:");
-            teamList = request.getTeamMatches("T3");
-            printDetailsList(teamList);
-            System.out.println();
-
-            System.out.println("Matches of team T4:");
-            teamList = request.getTeamMatches("T4");
-            printDetailsList(teamList);
-            System.out.println();
-
-            System.out.println("Matches of team T5:");
-            teamList = request.getTeamMatches("T5");
-            printDetailsList(teamList);
-            System.out.println();
-
-            System.out.println("Matches of team T6:");
-            teamList = request.getTeamMatches("T6");
-            printDetailsList(teamList);
-            System.out.println();
-
-            System.out.println("Matches of team T7:");
-            teamList = request.getTeamMatches("T7");
-            printDetailsList(teamList);
-            System.out.println();
-
-            System.out.println("Matches of team T8:");
-            teamList = request.getTeamMatches("T8");
-            printDetailsList(teamList);
-            System.out.println();
-
-            System.out.println("Matches of team T9:");
-            teamList = request.getTeamMatches("T9");
-            printDetailsList(teamList);
-            System.out.println();
-
-            System.out.println("Matches of team T10:");
-            teamList = request.getTeamMatches("T10");
-            printDetailsList(teamList);
-            System.out.println();
-
-            System.out.println("\n\nHOADREA RAZVAN\n\n");
-
-
-
 
             System.out.println("Details of league L1:");
             leagueDetails = request.getLeague("L1");
@@ -411,6 +322,23 @@ public class RosterClient {
             sportList = request.getSportsOfPlayer("P28");
             printDetailsList(sportList);
             System.out.println();
+
+
+            System.out.println("\n\nHOADREA RAZVAN\n\n");
+
+
+            System.out.println("Top teams in league L3:");
+            teamList = request.getAllTopTeamsByLeague("L1");
+            printDetailsList(teamList);
+            System.out.println();
+
+            System.out.println("All matches of team T1:");
+            teamList = request.getAllMatchesByTeam("T1");
+            printDetailsList(teamList);
+            System.out.println();
+
+            System.out.println("HOADREA RAZVAN\n\n");
+
 
         } catch (Exception ex) {
             System.err.println("Caught an exception:");

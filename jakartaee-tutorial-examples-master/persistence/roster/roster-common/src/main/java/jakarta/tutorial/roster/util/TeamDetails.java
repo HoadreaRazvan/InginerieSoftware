@@ -18,38 +18,55 @@ public class TeamDetails implements Serializable {
     private String id;
     private String name;
     private String city;
-    private int matchesPlayed=-1;
-    private int points=-1;
+    private String opponent;
+    private int matchesPlayed;
+    private int points;
+    private int scoreTeam1;
+    private int scoreTeam2;
 
     public TeamDetails(String id, String name, String city) {
 
         this.id = id;
         this.name = name;
         this.city = city;
+        this.matchesPlayed=-1;
+        this.points=-1;
+        this.scoreTeam1=-1;
     }
 
-    public TeamDetails(String id, int matchesPLayed, int points) {
-
-        this.id = id;
-        this.matchesPlayed = matchesPLayed;
-        this.points = points;
-    }
-
-    public TeamDetails(String id, String name, String city,int points) {
-
-        this.id = id;
+    public TeamDetails(String name, int matchesPlayed, int points) {
         this.name = name;
-        this.city = city;
+        this.matchesPlayed = matchesPlayed;
         this.points = points;
+        this.scoreTeam1=-1;
+    }
+    public TeamDetails(String team1,String team2, int scoreTeam1, int scoreTeam2) {
+        this.name = team1;
+        this.opponent = team2;
+        this.scoreTeam1 = scoreTeam1;
+        this.scoreTeam2 = scoreTeam2;
+        this.matchesPlayed=-1;
+        this.points=-1;
     }
 
+    public String getOpponent() {
+        return opponent;
+    }
 
-    public int getMatchesPlayed() {
-        return matchesPlayed;
+    public int getScoreTeam2() {
+        return scoreTeam2;
+    }
+
+    public int getScoreTeam1() {
+        return scoreTeam1;
     }
 
     public int getPoints() {
         return points;
+    }
+
+    public int getMatchesPlayed() {
+        return matchesPlayed;
     }
 
     public String getId() {
@@ -66,12 +83,12 @@ public class TeamDetails implements Serializable {
 
     @Override
     public String toString() {
-        if(matchesPlayed!=-1)
-            return id + " " + matchesPlayed + " " + points;
-        else if(points!=-1)
-            return id + " " + name + " " + city + " " + points;
+        if(matchesPlayed!=-1 && points!=-1)
+            return name + " " + matchesPlayed + " " + points;
+        else if(scoreTeam1!=-1)
+            return name + " " + opponent + " -> " + scoreTeam1 + ":" + scoreTeam2;
         else
-            return id + " " + name + " " + city;
+        return id + " " + name + " " + city;
     }
 
 }

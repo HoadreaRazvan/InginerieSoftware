@@ -20,9 +20,9 @@ import jakarta.tutorial.roster.util.TeamDetails;
 
 @Remote
 public interface Request {
-    void addMatch(String team1,String team2, Boolean team1Win, Boolean team2Win, Boolean tie);
-    List<TeamDetails> getLeagueStandings(String leagueId);
-    List<TeamDetails> getTeamMatches(String teamId);
+    void allPosibleMatches(String leagueId);
+    List<TeamDetails> getAllTopTeamsByLeague(String leagueId);
+    List<TeamDetails> getAllMatchesByTeam(String teamId);
 
     void addPlayer(String playerId, String teamId);
 

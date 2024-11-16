@@ -26,9 +26,8 @@ public class Team implements Serializable {
     private Collection<Player> players;
     private League league;
 
-    private Collection<Team> matches;
     private int points;
-
+    private String matchesPlayed="";
 
     public int getPoints() {
         return points;
@@ -38,6 +37,22 @@ public class Team implements Serializable {
         this.points = points;
     }
 
+    public String getMatchesPlayed() {
+        return matchesPlayed;
+    }
+    public void setMatchesPlayed(String matchesPlayed) {
+        this.matchesPlayed = matchesPlayed;
+    }
+
+    public void addMatch(String match)
+    {
+        matchesPlayed+=match+":";
+    }
+
+
+
+    private Collection<Team> matches;
+
     @OneToMany
     public Collection<Team> getMatches() {
         return matches;
@@ -46,6 +61,13 @@ public class Team implements Serializable {
     public void setMatches(Collection<Team> matches) {
         this.matches = matches;
     }
+
+
+
+
+
+
+
 
     /** Creates a new instance of Team */
     public Team() {
@@ -115,7 +137,4 @@ public class Team implements Serializable {
         this.getPlayers().remove(player);
     }
 
-    public void addMatch(Team t2) {
-        this.getMatches().add(t2);
-    }
 }
