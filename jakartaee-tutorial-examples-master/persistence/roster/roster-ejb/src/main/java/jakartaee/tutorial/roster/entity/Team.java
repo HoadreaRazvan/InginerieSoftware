@@ -51,16 +51,7 @@ public class Team implements Serializable {
 
 
 
-    private Collection<Team> matches;
 
-    @OneToMany
-    public Collection<Team> getMatches() {
-        return matches;
-    }
-
-    public void setMatches(Collection<Team> matches) {
-        this.matches = matches;
-    }
 
 
 

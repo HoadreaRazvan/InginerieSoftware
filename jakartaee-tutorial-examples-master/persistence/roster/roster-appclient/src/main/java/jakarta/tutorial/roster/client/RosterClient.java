@@ -38,7 +38,7 @@ public class RosterClient {
             System.exit(0);
 
         } catch (Exception ex) {
-            System.err.println("Caught an exception:");
+            System.err.println(ex.getMessage());
         }
     }
 
@@ -341,7 +341,7 @@ public class RosterClient {
 
 
         } catch (Exception ex) {
-            System.err.println("Caught an exception:");
+            System.err.println(ex.getMessage());
         }
 
     } // getMoreInfo
