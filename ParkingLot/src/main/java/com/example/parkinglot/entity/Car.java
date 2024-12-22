@@ -3,20 +3,16 @@ package com.example.parkinglot.entity;
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "car")
 public class Car {
     @Id
     @GeneratedValue
     private Long id;
 
-    @Column(name = "license_plate")
     private String licensePlate;
 
-    @Column(name = "parking_spot")
     private String parkingSpot;
 
     @ManyToOne
-    @JoinColumn(name = "owner_id")
     private User owner;
 
     public User getOwner() {
