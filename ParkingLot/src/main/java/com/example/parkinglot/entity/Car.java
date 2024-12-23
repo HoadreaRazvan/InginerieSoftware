@@ -3,17 +3,19 @@ package com.example.parkinglot.entity;
 import jakarta.persistence.*;
 
 @Entity
-public class Car {
-    @Id
-    @GeneratedValue
-    private Long id;
+public class Car
 
-    private String licensePlate;
-
-    private String parkingSpot;
-
+{
     @ManyToOne
     private User owner;
+
+    @GeneratedValue
+    @Id
+    Long id;
+    String licensePlate;
+    String parkingSpot;
+
+    private CarPhoto photo;
 
     public User getOwner() {
         return owner;
@@ -23,12 +25,12 @@ public class Car {
         this.owner = owner;
     }
 
-    public String getParkingSpot() {
-        return parkingSpot;
+    public Long getId() {
+        return id;
     }
 
-    public void setParkingSpot(String parkingSpot) {
-        this.parkingSpot = parkingSpot;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getLicensePlate() {
@@ -39,11 +41,20 @@ public class Car {
         this.licensePlate = licensePlate;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public String getParkingSpot() {
+        return parkingSpot;
     }
 
-    public Long getId() {
-        return id;
+    public void setParkingSpot(String parkingSpot) {
+        this.parkingSpot = parkingSpot;
+    }
+
+    @OneToOne(mappedBy = "car", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    public CarPhoto getPhoto() {
+        return photo;
+    }
+
+    public void setPhoto(CarPhoto photo) {
+        this.photo = photo;
     }
 }
