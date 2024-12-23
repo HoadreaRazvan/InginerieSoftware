@@ -1,4 +1,4 @@
-package com.example.parkinglot;
+package com.example.parkinglot.servlets.cars;
 
 import com.example.parkinglot.common.CarDto;
 import com.example.parkinglot.common.UserDto;
@@ -29,7 +29,7 @@ public class EditCar extends HttpServlet {
         CarDto car = carsBean.findById(carId);
         request.setAttribute("car", car);
 
-        request.getRequestDispatcher("/WEB-INF/pages/editCar.jsp").forward(request, response);
+        request.getRequestDispatcher("/WEB-INF/pages/cars/editCar.jsp").forward(request, response);
     }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

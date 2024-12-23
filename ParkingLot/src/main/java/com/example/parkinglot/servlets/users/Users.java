@@ -1,6 +1,5 @@
-package com.example.parkinglot;
+package com.example.parkinglot.servlets.users;
 
-import com.example.parkinglot.common.CarDto;
 import com.example.parkinglot.common.UserDto;
 import com.example.parkinglot.ejb.InvoiceBean;
 import com.example.parkinglot.ejb.UsersBean;
@@ -35,7 +34,7 @@ public class Users extends HttpServlet {
             request.setAttribute("invoices", usernames);
         }
 
-        request.getRequestDispatcher("/WEB-INF/pages/users.jsp").forward(request,response);
+        request.getRequestDispatcher("/WEB-INF/pages/users/users.jsp").forward(request,response);
     }
 
     @Override
